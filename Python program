@@ -1,0 +1,91 @@
+def selectionsort(array, size): 
+
+    for step in range(size): 
+
+        min_indx = step; 
+
+        for i in range(step+1, size): 
+
+            if array[i] < array[min_indx]: 
+
+                min_indx = i; 
+
+             
+
+        (array[step],array[min_indx])=(array[min_indx],array[step]);  
+
+    return array; 
+
+  
+
+def bubblesort(arr, n): 
+
+    for i in range(n-1): 
+
+        for j in range(n-i-1): 
+
+            if arr[j]>arr[j+1]: 
+
+                (arr[j],arr[j+1]) = (arr[j+1],arr[j]); 
+
+          
+
+    return arr; 
+
+  
+
+def display(arr , cnt): 
+
+    size = len (arr); 
+
+    while cnt>0: 
+
+        print(arr[size-1]); 
+
+        size = size -1; 
+
+        cnt = cnt -1; 
+
+    
+
+  
+
+data = list(); 
+
+num = input("Enter the number of elements:"); 
+
+for i in range(int(num)): 
+
+    n = input("num:"); 
+
+    data.append(float(n)); 
+
+choice = 1; 
+
+while choice !=3: 
+
+    print("1. selection sort:"); 
+
+    print("2. Bubble  sort:"); 
+
+    print("3. Exit"); 
+
+    choice = int(input("choice:")); 
+
+    if choice == 1: 
+
+        arr = selectionsort(data[:],len(data)); 
+
+        print(arr); 
+
+        display(arr,5); 
+
+    if choice == 2: 
+
+        arr = bubblesort(data,len(data)); 
+
+        print(arr); 
+
+        display(arr,5);   
+
+           
